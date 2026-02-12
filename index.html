@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <title>鼻鼻闖關-2(勿動)</title>
-    
-
-  </head>
-    
-  <body>
-  <!doctype html>
+<!doctype html>
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8" />
@@ -428,7 +417,7 @@
 
 <script>
 // 設定你的 Google Script URL (選填，若無後端可忽略)
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzWT_39e3ev68nMQhniLyBIGgkD-gqqBUGiWJ_6uAuAR7ILTwRKbPDTrXy3rcR_EMQbNw/exec"; 
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwPLUnXLtLT09rM7jcjFQugfLdh90PHB1b6wjUzRBkB_BX5ni66kv__aUXagqTjP0eLKQ/exec"; 
 
 // ★ 關鍵：更改了 DB_KEY，讓你每次用這份代碼都是新的開始
 const DB_KEY = "bibi_game_v2026_clean"; 
@@ -633,7 +622,7 @@ function confirmType(){
     nextW1Step('room'); 
 }
 
-const W1_CLUES = { 1:{t:"環境",i:"❄️",d:"冷氣或溫差",r:"一進冷氣房就不舒服"}, 2:{t:"過敏原",i:"🌫️",d:"灰塵花粉",r:"碰到灰塵就想打噴嚏"}, 3:{t:"中醫觀點",i:"🧘",d:"體質差異",r:"因為體質不同，所以症狀也不同。\n原來不是每個人都一樣！"} };
+const W1_CLUES = { 1:{t:"環境",i:"❄️",d:"冷氣或溫差",r:"原來是因為溫差！一進冷氣房溫度降太快，鼻子受不了刺激，就開始抗議了"}, 2:{t:"過敏原",i:"🌫️",d:"灰塵花粉",r:"抓到了！原來灰塵和花粉也是兇手！👃 難怪每次大掃除或花粉季，我都會一連串噴嚏打不停，原來是它們在刺激我的防護罩！"}, 3:{t:"中醫觀點",i:"🧘",d:"體質差異",r:"因為體質不同，所以症狀也不同。\n原來不是每個人都一樣!"} };
 function findClue(id, el){
   if(el.classList.contains("found")) return;
   const c = W1_CLUES[id];
@@ -822,8 +811,4 @@ renderStats();
 updateMap();
 </script>
 </body>
-</html>
-    
-  </body>
-  
 </html>
