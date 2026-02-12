@@ -774,10 +774,28 @@ function answerQ(qid, ans, hideId, showId){
 }
 
 function finishW2(){
-  if(s.w2d) return;
-  s.w2d = true; s.exp += 50; save();
-  const actionStr = w1Data.actions.join(", ");
-  sendData({ w2_done: "Yes", q1_ans: w2Answers.q1, q2_ans: w2Answers.q2, q3_ans: w2Answers.q3, w1_symptoms: "行動承諾: " + actionStr, exp: s.exp });
+  if(s.w2d && document.getElementById("w2-done").classList.contains("show")) return;
+  
+  s.w2d = true; 
+  s.exp += 50; 
+  save();
+
+  // 這裡要把勾選的行為合併成字串送出
+  const actionStr = w1Data.actions.join(","); 
+
+  sendData({ 
+    w1_done: "Yes",
+    w1_symptoms: w1Data.symptoms.join(", "),
+    w1_type: w1Data.type.join("+"),
+    w2_done: "Yes",
+    w2_actions: actionStr, // 這一行最重要，對應後端的 checkAction
+    q1_ans: w2Answers.q1, 
+    q2_ans: w2Answers.q2, 
+    q3_ans: w2Answers.q3,
+    exp: s.exp 
+  });
+
+  // 顯示結算卡畫面 (如前一段建議的代碼)
   document.getElementById("w2-quiz-area").classList.add("hidden");
   document.getElementById("w2-done").classList.remove("hidden");
 }
